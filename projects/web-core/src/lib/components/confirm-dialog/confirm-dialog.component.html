@@ -1,0 +1,8 @@
+<p-dialog header="{{title | label}}" [(visible)]="display" [modal]="true" [responsive]="true" [width]="dialogWidth"
+  [minWidth]="200" [minY]="70" [minHeight]="100" [maximizable]="true" [baseZIndex]="16000" [closable]="closable" [style]="">
+  <span class="dia-span">{{messageContent | message: messageContentParams}}</span>
+  <p-footer>
+    <button *ngFor="let item of buttons" type="button" pButton (click)="buttonClick(item.dialogCloseOnClick, item.callBackFN)"
+      label="{{item.buttonLabel}}" class="{{item.btnClass ? item.btnClass : ''}}" [disabled]="isBtnDisabled(item.disabled)"></button>
+  </p-footer>
+</p-dialog>

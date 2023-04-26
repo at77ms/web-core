@@ -1,0 +1,12 @@
+export * from './translate/label.pipe';
+export * from './translate/message.pipe';
+export * from './translate/missing-translation-handler';
+export * from './translate/translate-fake.loader';
+export * from './translate/translate-http-loader';
+export * from './translate/translate-loader';
+export * from './translate/translate.compiler';
+export * from './translate/translate.directive';
+export * from './translate/translate.parser';
+export * from './translate/translate.service';
+export * from './translate/translate.store';
+export { TranslateModuleConfig, TranslateModule } from './translate/translate.module';

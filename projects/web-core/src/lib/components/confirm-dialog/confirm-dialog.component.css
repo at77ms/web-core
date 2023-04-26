@@ -1,0 +1,5 @@
+.dia-span{
+    margin: 10px;
+    display: inline-block;
+    width: calc(100% - 20px);
+}

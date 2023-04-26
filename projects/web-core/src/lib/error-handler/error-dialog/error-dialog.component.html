@@ -1,0 +1,10 @@
+<div id="error-dialog">
+  <p-dialog header="{{dialogHeader}}" [(visible)]="isMessageShow" [width]="420">
+    <span [innerHtml]="showMessage"></span><br/>
+    <span [innerHtml]="originErrorMessage"></span>
+    <p-footer>
+      <button type="button" pButton (click)="close()" label="Exit" class="ui-button-rounded ui-button-secondary"></button>
+      <button type="button" pButton (click)="accept()" label="Copy" class="ui-button-rounded"></button>
+    </p-footer>
+  </p-dialog>
+</div>

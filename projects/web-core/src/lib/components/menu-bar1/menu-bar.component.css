@@ -1,0 +1,35 @@
+#system-menu-bar{
+    z-index: 4;
+    width: 100%;
+    margin-left: 0px;
+    position: fixed;
+    top: 68px;
+}
+#system-menu-bar-overlay{
+    top:0;
+    z-index: 6;
+    background-color: #f4f4f4;
+    border-right: 1px solid #dbdab4;
+    position: fixed;
+    height: 100%;
+    width: 240px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 0.3s;
+    transform: translateX(-185px);
+}
+#system-menu-bar-overlay:hover{
+    transform: translateX(-0px);
+}
+.display-selectBtn{
+  display: none;
+}
+#system-menu-bar-overlay:hover .display-selectBtn{
+  display: inline-block;
+}
+.menu-title{
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}

@@ -1,0 +1,9 @@
+.custom-margin{
+    margin-top:5px;
+}
+.dialogContent .ui-dialog-content.ui-widget-content{
+    padding-bottom: 200px;
+    overflow-y: auto;
+    min-height: 350px;
+    max-height: 580px;
+}

@@ -1,0 +1,31 @@
+  #userProfileForm .title{
+    font-size: 15px;
+  }
+  #userProfileForm .title hr{
+    height:2px;
+    color: #595959;
+  }
+  #userProfileForm .col-sm-2{
+    padding-left: 28px;
+  }
+  .left-text-attribute{
+    padding:0!important;
+    text-align: left;
+    float: left;
+    width: 160px;
+    color: #8c8c8c;
+  }
+  .right-text-attribute{
+    margin-left: 10px;
+    color: #8c8c8c;
+  }
+  #userProfileAuthority li{
+    list-style-type:none;
+  }
+  .row-bottom{
+    margin-bottom: 10px;
+  }
+  .dialog-header{
+    font-size: bold;
+    color:#262626;
+  }

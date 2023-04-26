@@ -1,0 +1,77 @@
+
+<p-dialog [(visible)]= "userProfileDisplay" [modal]="false" [width]= "800" [maximizable]= "true" (onHide)= "onCloseClick()">
+    <p-header class="dialog-header">User Profile</p-header>
+   
+    <div id="userProfileForm"  class="row option-content" >
+            <div id="userProfileInfo">
+              <div class="title col-sm-12">User Information
+                <hr>
+              </div>
+              <div class="col-sm-12">
+                <div class="row-bottom">
+                    <span class="left-text-attribute ">User Name</span>
+                    <span class="right-text-attribute">{{"Susan Wu"}}</span>
+                </div>
+                <div class="row-bottom">
+                    <span class="left-text-attribute ">ID</span>
+                    <span class="right-text-attribute">{{"ASNPHLC"}}</span>
+                </div>
+                <div class="row-bottom">
+                    <span class="left-text-attribute ">Email</span>
+                    <span class="right-text-attribute">{{"Susan-ch.Wu@aia.com"}}</span>
+                </div>
+                </div>
+            </div>
+
+            <div id="userProfileAuthority">
+                <div class="title col-sm-12"><hr>User Authority
+                  <hr>
+                </div>
+                <div class="col-sm-12">
+                  <div class="row-bottom">
+                      <span class="left-text-attribute ">AD Groups</span>
+                      <div style="float: left;">
+                      <li>
+                          <span class="right-text-attribute">{{'CIG_G_AIATSS_AS_IL_Mainframe_01'}}</span>
+                      </li>
+                      <li >
+                          <span class="right-text-attribute">{{'CIG_G_AIATSS_AS_IL_Mainframe_02'}}</span>
+                      </li>
+                      <li >
+                          <span class="right-text-attribute">{{'CIG_G_CIG02'}}</span>
+                      </li>
+                      <li>
+                          <span class="right-text-attribute">{{'CIG_G_CIG03'}}</span>
+                      </li>
+                      <li>
+                          <span class="right-text-attribute">{{'CIG_G_Group_Pension_Coast_FE_Dev'}}</span>
+                      </li>
+                      <li>
+                          <span class="right-text-attribute">{{'CIG_G_Group_Pension_Project Coast_Dev'}}</span>
+                      </li>
+                      <li>
+                          <span class="right-text-attribute">{{'jira-users'}}</span>
+                      </li>
+                      <li>
+                          <span class="right-text-attribute">{{'TSS_G_Int_zSCalar_User'}}</span>
+                      </li>
+                  </div>
+                  </div>
+                  </div>
+                  <div class="col-sm-12">
+                  <div class="row-bottom">
+                      <span class="left-text-attribute ">Role</span>
+                      <span class="right-text-attribute">{{""}}</span>
+                  </div>
+                  <div class="row-bottom">
+                      <span class="left-text-attribute">Inherit Authority</span>
+                      <span class="right-text-attribute">{{""}}</span>
+                  </div>
+                  <div class="row-bottom">
+                      <span class="left-text-attribute">Effective User Authority</span>
+                      <span class="right-text-attribute">{{""}}</span>
+                  </div>
+                </div>
+              </div>
+          </div>
+</p-dialog>

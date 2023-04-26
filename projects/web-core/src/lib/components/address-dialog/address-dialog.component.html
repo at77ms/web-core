@@ -1,0 +1,257 @@
+<p-dialog header="Address" [(visible)]="addressDisplay" [modal]="true" (onHide)="onHide()" [width]="1020" [height]="400"
+    [maximizable]="true" [baseZIndex]="10000" [positionTop]="50" class="dialogContent">
+    <form [formGroup]="addressForm.getForm()">
+        <div class="ui-g ui-fluid custom-margin padding-left padding-right">
+            <div class="ui-n-24 content-bg">
+                <div width="100%" class="ui-n-24">
+                    <div class="ui-n-4">
+                        <p-radioButton name="addressgroup" value="en" label="Address" formControlName="addrFormat">
+                        </p-radioButton>
+                    </div>
+                    <div class="ui-n-4">
+                        <p-radioButton name="addressgroup" value="chn" label="中文地址" formControlName="addrFormat"
+                            [disabled]="disableChn"></p-radioButton>
+                    </div>
+                    <div class="ui-n-4">
+                        <p-radioButton name="addressgroup" value="dmt" label="國内地址" formControlName="addrFormat"
+                            [disabled]="disableDmt"></p-radioButton>
+                    </div>
+                </div>
+                <div *ngIf="addressForm.getValue('addrFormat') === 'en'">
+                    <div class="ui-n-24">
+                        <div class="ui-n-8">
+                            <p>Flat</p>
+                            <input type="text" pInputText formControlName="en_addr1_01" (blur)="toUpperCaseFn($event, 'en_addr1_01')" (keyup)="toUpperCaseFn($event, 'en_addr1_01')"
+                                [ngClass]="{'required-input':this.addressForm.hasError('en_addr1_01')}" maxlength="5">
+                            <p-message *ngIf="addressForm.hasError('en_addr1_01')" severity="error"
+                                text="{{addressForm.getError('en_addr1_01') | message:addressForm.getParamAsString('en_addr1_01') }}">
+                            </p-message>
+                        </div>
+                        <div class="ui-n-8">
+                            <p>Floor</p>
+                            <input type="text" pInputText formControlName="en_addr1_02"  (blur)="toUpperCaseFn($event, 'en_addr1_02')" (keyup)="toUpperCaseFn($event, 'en_addr1_02')"
+                                [ngClass]="{'required-input':this.addressForm.hasError('en_addr1_02')}" maxlength="5">
+                            <p-message *ngIf="addressForm.hasError('en_addr1_02')" severity="error"
+                                text="{{addressForm.getError('en_addr1_02') | message:addressForm.getParamAsString('en_addr1_02') }}">
+                            </p-message>
+                        </div>
+                        <div class="ui-n-8">
+                            <p>Block</p>
+                            <input type="text" pInputText formControlName="en_addr1_03"  (blur)="toUpperCaseFn($event, 'en_addr1_03')" (keyup)="toUpperCaseFn($event, 'en_addr1_03')"
+                                [ngClass]="{'required-input':this.addressForm.hasError('en_addr1_03')}" maxlength="5">
+                            <p-message *ngIf="addressForm.hasError('en_addr1_03')" severity="error"
+                                text="{{addressForm.getError('en_addr1_03') | message:addressForm.getParamAsString('en_addr1_03') }}">
+                            </p-message>
+                        </div>
+                    </div>
+                    <div class="ui-n-24">
+                        <div class="ui-n-24 ui-fluid">
+                            <input type="text" pInputText formControlName="en_addr2" maxlength="30"  (blur)="toUpperCaseFn($event, 'en_addr2')" (keyup)="toUpperCaseFn($event, 'en_addr2')"
+                                [ngClass]="{'required-input':this.addressForm.hasError('en_addr2')}">
+                            <p-message *ngIf="addressForm.hasError('en_addr2')" severity="error"
+                                text="{{addressForm.getError('en_addr2') | message:addressForm.getParamAsString('en_addr2') }}">
+                            </p-message>
+                        </div>
+                    </div>
+                    <div class="ui-n-24">
+                        <div class="ui-n-24 ui-fluid">
+                            <input type="text" pInputText formControlName="en_addr3" maxlength="30"  (blur)="toUpperCaseFn($event, 'en_addr3')" (keyup)="toUpperCaseFn($event, 'en_addr3')"
+                                [ngClass]="{'required-input':this.addressForm.hasError('en_addr3')}">
+                            <p-message *ngIf="addressForm.hasError('en_addr3')" severity="error"
+                                text="{{addressForm.getError('en_addr3') | message:addressForm.getParamAsString('en_addr3') }}">
+                            </p-message>
+                        </div>
+                    </div>
+                    <div class="ui-n-24">
+                        <div class="ui-n-24 ui-fluid">
+                            <input type="text" pInputText formControlName="en_addr4" maxlength="30"  (blur)="toUpperCaseFn($event, 'en_addr4')" (keyup)="toUpperCaseFn($event, 'en_addr4')"
+                                [ngClass]="{'required-input':this.addressForm.hasError('en_addr4')}">
+                            <p-message *ngIf="addressForm.hasError('en_addr4')" severity="error"
+                                text="{{addressForm.getError('en_addr4') | message:addressForm.getParamAsString('en_addr4') }}">
+                            </p-message>
+                        </div>
+                    </div>
+                    <div class="ui-n-24">
+                        <div class="ui-n-24 ui-fluid">
+                            <input type="text" pInputText formControlName="en_addr5" maxlength="30"  (blur)="toUpperCaseFn($event, 'en_addr5')" (keyup)="toUpperCaseFn($event, 'en_addr5')"
+                                [ngClass]="{'required-input':this.addressForm.hasError('en_addr5')}">
+                            <p-message *ngIf="addressForm.hasError('en_addr5')" severity="error"
+                                text="{{addressForm.getError('en_addr5') | message:addressForm.getParamAsString('en_addr5') }}">
+                            </p-message>
+                        </div>
+                    </div>
+                    <div class="ui-n-24">
+                        <div class="ui-n-8">
+                            <p>Country</p>
+                            <p-autoComplete formControlName="en_country" [forceSelection]="true" [autoHighlight]="true"
+                                [dropdown]="true" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"
+                                [style]="{'width':'57%'}" [field]="formatCountryDropDown" [suggestions]="officeSug"
+                                (onFocus)="getCountryOptions()" (completeMethod)="OfficeFilter($event)"
+                                (onClear)="autoCompleteClear('addressForm', 'en_country')">
+                            </p-autoComplete>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="addressForm.getValue('addrFormat') === 'chn'">
+                    <div class="ui-n-24">
+                        <div class="ui-n-8">
+                            <p>國家</p>
+                            <p-autoComplete formControlName="chn_country" [forceSelection]="true" [autoHighlight]="true"
+                                [dropdown]="true" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"
+                                [style]="{'width':'57%'}" [field]="formatCountryDropDown" [suggestions]="officeChnSug"
+                                (onFocus)="getChnCountryOptions()" (completeMethod)="OfficeChnFilter($event)"
+                                (onClear)="autoCompleteClear('addressForm', 'chn_country')">
+                            </p-autoComplete>
+                        </div>
+                    </div>
+                    <div class="ui-n-24">
+                        <div class="ui-n-24 ui-fluid">
+                            <input type="text" pInputText formControlName="chn_addr1" maxlength="150"
+                                [ngClass]="{'required-input':this.addressForm.hasError('chn_addr1')}">
+                            <p-message *ngIf="addressForm.hasError('chn_addr1')" severity="error"
+                                text="{{addressForm.getError('chn_addr1') | message:addressForm.getParamAsString('chn_addr1') }}">
+                            </p-message>
+                        </div>
+                    </div>
+                    <div class="ui-n-24">
+                        <div class="ui-n-24 ui-fluid">
+                            <input type="text" pInputText formControlName="chn_addr2" maxlength="150"
+                                [ngClass]="{'required-input':this.addressForm.hasError('chn_addr2')}">
+                            <p-message *ngIf="addressForm.hasError('chn_addr2')" severity="error"
+                                text="{{addressForm.getError('chn_addr2') | message:addressForm.getParamAsString('chn_addr2') }}">
+                            </p-message>
+                        </div>
+                    </div>
+                    <div class="ui-n-24">
+                        <div class="ui-n-24 ui-fluid">
+                            <input type="text" pInputText formControlName="chn_addr3" maxlength="150"
+                                [ngClass]="{'required-input':this.addressForm.hasError('chn_addr3')}">
+                            <p-message *ngIf="addressForm.hasError('chn_addr3')" severity="error"
+                                text="{{addressForm.getError('chn_addr3') | message:addressForm.getParamAsString('chn_addr3') }}">
+                            </p-message>
+                        </div>
+                    </div>
+                    <div class="ui-n-24">
+                        <div class="ui-n-24 ui-fluid">
+                            <input type="text" pInputText formControlName="chn_addr4" maxlength="150"
+                                [ngClass]="{'required-input':this.addressForm.hasError('chn_addr4')}">
+                            <p-message *ngIf="addressForm.hasError('chn_addr4')" severity="error"
+                                text="{{addressForm.getError('chn_addr4') | message:addressForm.getParamAsString('chn_addr4') }}">
+                            </p-message>
+                        </div>
+                    </div>
+                    <div class="ui-n-24">
+                        <div class="ui-n-8">
+                            <p>座</p>
+                            <input type="text" pInputText formControlName="chn_addr1_01" maxlength="30"
+                                [ngClass]="{'required-input':this.addressForm.hasError('chn_addr1_01')}">
+                            <p-message *ngIf="addressForm.hasError('chn_addr1_01')" severity="error"
+                                text="{{addressForm.getError('chn_addr1_01') | message:addressForm.getParamAsString('chn_addr1_01') }}">
+                            </p-message>
+                        </div>
+                        <div class="ui-n-8">
+                            <p>樓</p>
+                            <input type="text" pInputText formControlName="chn_addr1_02" maxlength="30"
+                                [ngClass]="{'required-input':this.addressForm.hasError('chn_addr1_02')}">
+                            <p-message *ngIf="addressForm.hasError('chn_addr1_02')" severity="error"
+                                text="{{addressForm.getError('chn_addr1_02') | message:addressForm.getParamAsString('chn_addr1_02') }}">
+                            </p-message>
+                        </div>
+                        <div class="ui-n-8">
+                            <p>室</p>
+                            <input type="text" pInputText formControlName="chn_addr1_03" maxlength="30"
+                                [ngClass]="{'required-input':this.addressForm.hasError('chn_addr1_03')}">
+                            <p-message *ngIf="addressForm.hasError('chn_addr1_03')" severity="error"
+                                text="{{addressForm.getError('chn_addr1_03') | message:addressForm.getParamAsString('chn_addr1_03') }}">
+                            </p-message>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="addressForm.getValue('addrFormat') === 'dmt'">
+                    <div class="ui-n-24">
+                        <div class="ui-n-4">
+                            <p>國家</p>
+                            <p-dropdown placeholder="中國" formControlName="dmt_country" [options]="" [disabled]='true'
+                                [style]="{'width':'100%'}" [autoDisplayFirst]="false" [showTransitionOptions]="'0ms'"
+                                [hideTransitionOptions]="'0ms'" [showClear]="true">
+                            </p-dropdown>
+                        </div>
+                    </div>
+                    <div class="ui-n-24">
+                        <div class="ui-n-8">
+                            <p>省</p>
+                            <p-dropdown formControlName="dmt_provience" [options]="dmtProvincesOptions"
+                                (onChange)="setDmtAddr1('dmt_provience')" [style]="{'width':'100%'}" placeholder=""
+                                [autoDisplayFirst]="false" [showTransitionOptions]="'0ms'"
+                                [hideTransitionOptions]="'0ms'" [showClear]="true"></p-dropdown>
+                        </div>
+                        <div class="ui-n-8">
+                            <p>市</p>
+                            <p-dropdown formControlName="dmt_city" [options]="dmtCityOptions" (onShow)="getCity()"
+                                (onChange)="setDmtAddr1('dmt_city')" [style]="{'width':'100%'}" placeholder=""
+                                [autoDisplayFirst]="false" [showTransitionOptions]="'0ms'"
+                                [hideTransitionOptions]="'0ms'" [showClear]="true">
+                            </p-dropdown>
+                        </div>
+                        <div class="ui-n-8">
+                            <p>區</p>
+                            <p-dropdown formControlName="dmt_district" [options]="dmtDistrictOptions"
+                                (onShow)="getDistrict()" (onChange)="setDmtAddr2('dmt_district','dmtDistrictOptions')"
+                                [style]="{'width':'100%'}" placeholder="" [autoDisplayFirst]="false"
+                                [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" [showClear]="true">
+                            </p-dropdown>
+                        </div>
+                    </div>
+                    <div class="ui-n-24">
+                        <div class="ui-n-8">
+                            <p>路</p>
+                            <p-dropdown formControlName="dmt_road" [options]="dmtRoadOptions" (onShow)="getRoad()"
+                                (onChange)="setDmtAddr2('dmt_road','dmtRoadOptions')" [style]="{'width':'100%'}"
+                                placeholder="" [autoDisplayFirst]="false" [showTransitionOptions]="'0ms'"
+                                [hideTransitionOptions]="'0ms'" [showClear]="true">
+                            </p-dropdown>
+                        </div>
+                        <div class="ui-n-8">
+                            <p>巷</p>
+                            <p-dropdown formControlName="dmt_road2" [options]="dmtRoad2Options" (onShow)="getRoad2()"
+                                (onChange)="setDmtAddr2('dmt_road2','dmtRoad2Options')" [style]="{'width':'100%'}"
+                                placeholder="" [autoDisplayFirst]="false" [showTransitionOptions]="'0ms'"
+                                [hideTransitionOptions]="'0ms'" [showClear]="true">
+                            </p-dropdown>
+                        </div>
+                        <div class="ui-n-8">
+                            <p>郵政編碼</p>
+                            <input type="text" pInputText formControlName="dmt_addr4" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="ui-n-24">
+                        <div class="ui-n-24 ui-fluid">
+                            <input type="text" pInputText formControlName="dmt_addr1" maxlength="50" disabled="disabled"
+                                (onChange)="setDmtAddr1()">
+                        </div>
+                    </div>
+                    <div class="ui-n-24">
+                        <div class="ui-n-24 ui-fluid">
+                            <input type="text" pInputText formControlName="dmt_addr2" maxlength="50" disabled="disabled"
+                                (onChange)="setDmtAddr2()">
+                        </div>
+                    </div>
+                    <div class="ui-n-24">
+                        <div class="ui-n-24 ui-fluid">
+                            <input type="text" pInputText formControlName="dmt_addr3" maxlength="50"
+                                [ngClass]="{'required-input':this.addressForm.hasError('dmt_addr3')}">
+                            <p-message *ngIf="addressForm.hasError('dmt_addr3')" severity="error"
+                                text="{{addressForm.getError('dmt_addr3') | message:addressForm.getParamAsString('dmt_addr3') }}">
+                            </p-message>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <p-footer>
+        <button type="button" pButton (click)="onHide()" label="Cancel"
+            class="ui-button-rounded ui-button-secondary"></button>
+        <button type="button" pButton (click)="confirm()" label="Ok" class="ui-button-rounded"></button>
+    </p-footer>
+</p-dialog>

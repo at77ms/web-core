@@ -1,0 +1,6 @@
+<div class="search-container">
+  <input #searchBox type="search" aria-label="search" placeholder="Field Search" (input)="doSearch()"
+    (keyup)="doSearch()" (focus)="doSearch()" (click)="doSearch()">
+  <app-search-results *ngIf="showSearchResults"></app-search-results>
+  <span href="#" class="close-button" *ngIf="showSearchResults" (click)="close()"></span>
+</div>

@@ -1,0 +1,24 @@
+.header{
+    height: 60px;
+    color: #585858;
+    padding-left:15px;
+    padding-right: 15px; 
+    z-index: 7; 
+    border-bottom: 1px solid #dbdad4;
+}
+.version,.user-name{
+    line-height: 50px;
+}
+.version{
+    cursor: default;
+}
+.user-img{
+    color: #D31145;
+}
+.header-ritgh>div {
+    display: inline-block;
+    text-align: left;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}

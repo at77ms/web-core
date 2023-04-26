@@ -1,0 +1,6 @@
+<div *ngIf="currentBtns" id="pageFooterEleId" class="action-bar">
+	<span *ngFor="let btn of currentBtns">
+			<button pButton [disabled] = "btn.disabled" type="button" *ngIf="ifBtnGenerate(btn)" [label]="btn.label" [class]="btn.btnClass" (click)="btnClick($event, btn)"></button>
+			<p-splitButton [disabled] = "btn.disabled" *ngIf="ifSplitBtnGenerate(btn)" [label]="btn.label" [styleClass]="btn.btnClass"  (click)="btnClick($event, btn)" [model]="btn.items"></p-splitButton>
+	</span>
+</div>

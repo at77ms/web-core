@@ -1,0 +1,11 @@
+p{
+    font-size: 20px; 
+    color: #333333;
+    margin: 0;
+    line-height: 28px;
+}
+hr{
+    border-top:1px solid #cccccc; 
+    margin-top: 0.2em; 
+    margin-bottom: 0.2em; 
+}

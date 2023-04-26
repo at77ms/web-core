@@ -1,0 +1,20 @@
+<div class="header ui-g ui-fluid">
+  <div class="ui-n-10 header-title">
+    <span *ngIf="isInEnquiryMode" class="header-enquiry-txt">ENQUIRY</span>
+  </div>
+  <div class="user-info ui-n-14 header-ritgh" style="float: none; text-align: right; padding-right: 8px;">
+    <app-search *ngIf="isSearchShow"></app-search>
+    <div class="version">
+      <span>Version: <strong>{{version}}</strong></span>
+    </div>
+    <div class="user-img">
+      <span><i id="user_ico" class="pi pi-user cursor" (click)="menu.toggle($event)" style="font-size: 3em"></i></span>
+    </div>
+    <div class="user-name" title="{{userId}}">
+      <strong>{{userId}}</strong>
+    </div>
+  </div>
+  <p-menu #menu [popup]="true" [model]="menuItems"></p-menu>
+</div>
+<!-- <app-user-profile [userProfileDisplay]="userProfileDisplay" (userProfileDialogDisplayChange)="userProfileDisplay=$event"></app-user-profile>
+<app-user-preference [userPreferenceDisplay]="userPreferenceDisplay" (userPreferenceDialogDisplayChange)="userPreferenceDisplay=$event"></app-user-preference> -->

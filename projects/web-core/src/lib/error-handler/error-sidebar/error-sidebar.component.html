@@ -1,0 +1,11 @@
+<p-sidebar [(visible)]="notificationService.histroyNotifyDisplay" position="right" styleClass="ui-sidebar ui-sidebar-md">
+  <div style="height: 100%; overflow-y: auto;" >
+      <div *ngFor="let message of notificationService.histroyNotify">
+          <p-card >
+              <i class="pi pi-times" style="float:right; cursor: pointer;" (click)="removeNotify(message)"></i>
+              <h4 style="clear: both;">{{message.summary}}<span> &nbsp; - &nbsp; {{message.data.date}}</span></h4>
+              <p>{{message.detail}}</p>
+          </p-card>
+      </div>                   
+  </div>
+</p-sidebar>

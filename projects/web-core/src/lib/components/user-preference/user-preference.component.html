@@ -1,0 +1,48 @@
+<p-dialog [(visible)]= "userPreferenceDisplay" [modal]="false" [width]= "800" [maximizable]= "true" (onHide)= "onCloseClick()">
+    <p-header class="dialog-header">User Preference</p-header>
+    <div id="userPreferenceForm"  class="row option-content">
+        <div id="userPreferenceInfo">
+          <!-- <div class="title col-sm-12">User Preference
+            <hr>
+          </div> -->
+          <div class="col-sm-12">
+              <div class="row-bottom">
+                  <span class="left-text-attribute ">Page Size</span>
+                  <span class="right-text-attribute">{{"50"}}</span>
+              </div>
+              <div class="row-bottom">
+                  <span class="left-text-attribute ">Email Type</span>
+                  <span class="right-text-attribute">{{"HTML"}}</span>
+              </div>
+              <div class="row-bottom">
+                  <span class="left-text-attribute ">Language</span>
+                  <span class="right-text-attribute">{{"English (United States) [Default]"}}</span>
+              </div>
+              <div class="row-bottom">
+                    <span class="left-text-attribute ">Time Zone</span>
+                    <span class="right-text-attribute">{{"JIRA default (GMT+08:00) Shanghai"}}</span>
+              </div>
+              <div class="row-bottom">
+                  <span class="left-text-attribute ">My Changes</span>
+                  <span class="right-text-attribute">{{"Do not notify me"}}</span>
+              </div>
+              <div class="row-bottom">
+                  <span class="left-text-attribute ">Filter and Dashboard </span>
+                  <span class="right-text-attribute">{{"Unshared"}}</span>
+              </div>
+              <div class="row-bottom">
+                  <span class="left-text-attribute ">Sharing</span>
+                  <span class="right-text-attribute">{{"English (United States) [Default]"}}</span>
+              </div>
+              <div class="row-bottom">
+                  <span class="left-text-attribute ">Keyboard shortcuts</span>
+                  <span class="right-text-attribute">{{"Enabled"}}</span>
+              </div>
+              <div class="row-bottom">
+                  <span class="left-text-attribute ">Autowatch</span>
+                  <span class="right-text-attribute">{{"Inherit from global settings"}}</span>
+              </div>
+            </div>
+        </div>
+      </div>
+  </p-dialog>
